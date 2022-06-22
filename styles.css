@@ -1,0 +1,93 @@
+:root {
+    --background: rgba(54, 54, 54, 1);
+    --headers: rgba(232, 102, 236, 0.9);  
+    --text: rgba(232, 102, 236, 0.9);
+    --code: white;
+    --lines: 1px dashed white;
+    --highlight: cyan;
+    --hightlighttext: black;    
+       
+}
+
+body {
+    font-size: 1em;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+::selection {
+    background-color: var(--highlight);
+    color: var(--hightlighttext);
+}
+
+header {
+    text-align: center;
+    padding: 5%;
+
+}
+
+header p {
+    color: var(--code);
+    margin-bottom: 5%;
+}
+
+main {
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.card {
+    width: 30%;
+}
+
+section{
+    padding: 3%;
+    border: var(--lines);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    flex-grow: 1;
+    
+    
+}
+
+h2 {
+    font-size: 2em; 
+    border: 1px solid white;
+    padding: 1%;
+    position: relative;
+    margin-top: -37px;
+    z-index: 2;
+    background-color: var(--background);
+}
+
+.code-block {
+    white-space: pre-wrap;
+    overflow: auto;
+    padding: 20px;
+    color: var(--hightlighttext);
+    background-image: linear-gradient(
+        rgba(232, 102, 236, 0.3) 0%
+        rgba(232, 102, 236, 0.6) 100%
+    );
+}
+
+section + h2 {
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+section:hover, section:hover h2 {
+    box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1), 0 0 15px rgba(232, 102, 236, 1);
+}
+
+pre:active {
+    user-select: all;
+}
